@@ -33,7 +33,6 @@ public class consultarProveedores extends javax.swing.JFrame {
     public Connection cn;
     public Statement stmt;
     public ResultSet rs;
-    Proveedor objProveedor = new Proveedor();
     /**
      * Creates new form consultarProveedores
      */
