@@ -149,6 +149,11 @@ public class consultarUsuarios extends javax.swing.JFrame {
         btnImprimir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnImprimir.setForeground(new java.awt.Color(255, 255, 255));
         btnImprimir.setText("Imprimir lista de usuarios");
+        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -285,6 +290,32 @@ public class consultarUsuarios extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnReporteActionPerformed
+
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
+        if (optAdministrador.isSelected()) {//if para usuario administrado
+            conectarBase();
+            try {
+                String rutaReporte="src/reportes/reportesUsuariosAdmin.jasper";
+                JasperPrint rptProveedoresPDF = JasperFillManager.fillReport(rutaReporte,null,cn);
+                JasperViewer ventanaVisor = new JasperViewer(rptProveedoresPDF,false);
+                ventanaVisor.setTitle("Reporte de usuarios administrador Sistema Luna");
+                ventanaVisor.setVisible(true);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Error de BD en informe Verifica\n\n"+e);
+            }
+        } else if(optVendedor.isSelected()){
+            conectarBase();
+            try {
+                String rutaReporte="src/reportes/reportesUsuariosVendedores.jasper";
+                JasperPrint rptProveedoresPDF = JasperFillManager.fillReport(rutaReporte,null,cn);
+                JasperViewer ventanaVisor = new JasperViewer(rptProveedoresPDF,false);
+                ventanaVisor.setTitle("Reporte de usuarios vendedores Sistema Luna");
+                ventanaVisor.setVisible(true);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Error de BD en informe Verifica\n\n"+e);
+            }
+        }
+    }//GEN-LAST:event_btnImprimirActionPerformed
 
     /**
      * @param args the command line arguments
