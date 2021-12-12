@@ -261,7 +261,29 @@ public class consultarUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
-        
+        if (optAdministrador.isSelected()) {//if para usuario administrado
+            conectarBase();
+            try {
+                String rutaReporte="src/reportes/reportesUsuariosAdmin.jasper";
+                JasperPrint rptProveedoresPDF = JasperFillManager.fillReport(rutaReporte,null,cn);
+                JasperViewer ventanaVisor = new JasperViewer(rptProveedoresPDF,false);
+                ventanaVisor.setTitle("Reporte de usuarios administrador Sistema Luna");
+                ventanaVisor.setVisible(true);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Error de BD en informe Verifica\n\n"+e);
+            }
+        } else if(optVendedor.isSelected()){
+            conectarBase();
+            try {
+                String rutaReporte="src/reportes/reportesUsuariosVendedores.jasper";
+                JasperPrint rptProveedoresPDF = JasperFillManager.fillReport(rutaReporte,null,cn);
+                JasperViewer ventanaVisor = new JasperViewer(rptProveedoresPDF,false);
+                ventanaVisor.setTitle("Reporte de usuarios vendedores Sistema Luna");
+                ventanaVisor.setVisible(true);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Error de BD en informe Verifica\n\n"+e);
+            }
+        }
     }//GEN-LAST:event_btnReporteActionPerformed
 
     /**
