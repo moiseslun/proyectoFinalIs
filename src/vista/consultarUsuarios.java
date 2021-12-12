@@ -269,7 +269,7 @@ public class consultarUsuarios extends javax.swing.JFrame {
         if (optAdministrador.isSelected()) {//if para usuario administrado
             conectarBase();
             try {
-                String rutaReporte="src/reportes/reportesUsuariosAdmin.jasper";
+                String rutaReporte="src/reportes/reporteUsuariosAdmin.jasper";
                 JasperPrint rptProveedoresPDF = JasperFillManager.fillReport(rutaReporte,null,cn);
                 JasperViewer ventanaVisor = new JasperViewer(rptProveedoresPDF,false);
                 ventanaVisor.setTitle("Reporte de usuarios administrador Sistema Luna");
@@ -280,7 +280,7 @@ public class consultarUsuarios extends javax.swing.JFrame {
         } else if(optVendedor.isSelected()){
             conectarBase();
             try {
-                String rutaReporte="src/reportes/reportesUsuariosVendedores.jasper";
+                String rutaReporte="src/reportes/reporteUsuariosVendedores.jasper";
                 JasperPrint rptProveedoresPDF = JasperFillManager.fillReport(rutaReporte,null,cn);
                 JasperViewer ventanaVisor = new JasperViewer(rptProveedoresPDF,false);
                 ventanaVisor.setTitle("Reporte de usuarios vendedores Sistema Luna");
@@ -295,7 +295,7 @@ public class consultarUsuarios extends javax.swing.JFrame {
         if (optAdministrador.isSelected()) {//if para usuario administrado
             conectarBase();
             try {
-                String rutaReporte="src/reportes/reportesUsuariosAdmin.jasper";
+                String rutaReporte="src/reportes/reporteUsuariosAdmin.jasper";
                 JasperPrint rptProveedoresPDF = JasperFillManager.fillReport(rutaReporte,null,cn);
                 JasperViewer ventanaVisor = new JasperViewer(rptProveedoresPDF,false);
                 ventanaVisor.setTitle("Reporte de usuarios administrador Sistema Luna");
@@ -306,7 +306,7 @@ public class consultarUsuarios extends javax.swing.JFrame {
         } else if(optVendedor.isSelected()){
             conectarBase();
             try {
-                String rutaReporte="src/reportes/reportesUsuariosVendedores.jasper";
+                String rutaReporte="src/reportes/reporteUsuariosVendedores.jasper";
                 JasperPrint rptProveedoresPDF = JasperFillManager.fillReport(rutaReporte,null,cn);
                 JasperViewer ventanaVisor = new JasperViewer(rptProveedoresPDF,false);
                 ventanaVisor.setTitle("Reporte de usuarios vendedores Sistema Luna");
