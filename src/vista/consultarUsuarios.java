@@ -261,16 +261,7 @@ public class consultarUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
-        conectarBase();
-        try {
-            String rutaReporte="src/reportes/reporteUsuarios.jasper";
-            JasperPrint rptlibrosPDF = JasperFillManager.fillReport(rutaReporte,null,cn);
-            JasperViewer ventanaVisor = new JasperViewer(rptlibrosPDF,false);
-            ventanaVisor.setTitle("Reporte de Libros Sistema Luna");
-            ventanaVisor.setVisible(true);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Error de BD en informe Verifica\n\n"+e);
-        }
+        
     }//GEN-LAST:event_btnReporteActionPerformed
 
     /**
