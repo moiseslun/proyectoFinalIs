@@ -33,7 +33,6 @@ public class consultarUsuarios extends javax.swing.JFrame {
     public Connection cn;
     public Statement stmt;
     public ResultSet rs;
-    Usuario objUsuario = new Usuario();
     
     /**
      * Creates new form consultarUsuarios
